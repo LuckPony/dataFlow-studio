@@ -26,7 +26,7 @@ infra/         Infrastructure configuration
 docs/          Project documentation
 scripts/       Development scripts
 sample-data/   Sample CSV datasets
-
+```
 ## DataFlow Studio
 
 一个低代码的数据清洗、任务编排与可视化平台。
@@ -40,6 +40,7 @@ DataFlow Studio 允许用户上传 CSV 数据集，通过 n8n 执行可配置的
 后端：Java 21, Spring Boot, MyBatis-Plus
 前端：Vue 3, TypeScript, Vite
 数据库：MySQL
+数据库的变更：通过Flyway迁移来管理。
 缓存：Redis
 低代码工作流：n8n
 部署方式：Docker Compose
