@@ -37,20 +37,20 @@ DataFlow Studio 允许用户上传 CSV 数据集，通过 n8n 执行可配置的
 
 ## 技术架构
 
-后端：Java 21, Spring Boot, MyBatis-Plus
-前端：Vue 3, TypeScript, Vite
-数据库：MySQL
-数据库的变更：通过Flyway迁移来管理。
-缓存：Redis
-低代码工作流：n8n
-部署方式：Docker Compose
+- 后端：Java 21, Spring Boot, MyBatis-Plus
+- 前端：Vue 3, TypeScript, Vite
+- 数据库：MySQL
+- 数据库的变更：通过Flyway迁移来管理。
+- 缓存：Redis
+- 低代码工作流：n8n
+- 部署方式：Docker Compose
 
 ## 仓库目录结构
-
+```text
 backend/       Spring Boot 后端
 frontend/      Vue 前端
 infra/         基础设施配置
 docs/          项目文档
 scripts/       开发脚本
 sample-data/   CSV 示例数据集
-
+```
