@@ -1,4 +1,4 @@
-package com.pony.dataflow_backend;
+package com.pony.dataflow;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

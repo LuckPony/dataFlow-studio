@@ -1,0 +1,6 @@
+app:
+  environment: test
+
+logging:
+  level:
+    com.pony.dataflow: INFO

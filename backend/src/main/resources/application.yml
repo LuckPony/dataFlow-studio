@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: dataflow-backend
+
+  profiles:
+    default: local
+
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+server:
+  port: ${BACKEND_PORT:8080}
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+
+  info:
+    env:
+      enabled: true
+
+app:
+  display-name: DataFlow Studio
+  version: 0.1.0
+  environment: base
+
+info:
+  app:
+    name: ${app.display-name}
+    version: ${app.version}
+    description: Low-code data cleansing and orchestration platform
