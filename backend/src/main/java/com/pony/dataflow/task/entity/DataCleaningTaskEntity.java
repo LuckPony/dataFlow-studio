@@ -3,6 +3,7 @@ package com.pony.dataflow.task.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.Version;
 
 import java.time.LocalDateTime;
 
@@ -31,6 +32,8 @@ public class DataCleaningTaskEntity {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+    @Version
+    private Integer version;
 
     public DataCleaningTaskEntity() {
     }
@@ -121,5 +124,12 @@ public class DataCleaningTaskEntity {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 }
