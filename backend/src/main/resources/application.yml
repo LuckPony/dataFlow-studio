@@ -7,10 +7,27 @@ spring:
 
   lifecycle:
     timeout-per-shutdown-phase: 20s
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    validate-on-migrate: true
 
 server:
   port: ${BACKEND_PORT:8080}
   shutdown: graceful
+
+mybatis-plus:
+  configuration:
+    # 将数据库 create_time 自动映射成 Java 的 createTime
+    map-underscore-to-camel-case: true
+
+    # 将 MyBatis 日志交给 SLF4J
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
 
 management:
   endpoints:
