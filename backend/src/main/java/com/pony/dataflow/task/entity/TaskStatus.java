@@ -1,27 +1,37 @@
 package com.pony.dataflow.task.entity;
 
 /**
- * 数据清洗任务的生命周期状态。
+ * 数据清洗任务生命周期。
  */
 public enum TaskStatus {
 
-    /**
-     * 已创建，等待执行。
-     */
     PENDING,
-
-    /**
-     * 正在执行数据清洗。
-     */
     PROCESSING,
-
-    /**
-     * 任务成功完成。
-     */
     COMPLETED,
+    FAILED,
+    CANCELLED;
 
     /**
-     * 任务执行失败。
+     * 判断当前状态是否允许迁移到目标状态。
      */
-    FAILED
+    public boolean canTransitionTo(TaskStatus target) {
+        return switch (this) {
+            case PENDING ->
+                    target == PROCESSING || target == CANCELLED;
+
+            case PROCESSING ->
+                    target == COMPLETED || target == FAILED;
+
+            case COMPLETED, FAILED, CANCELLED -> false;
+        };
+    }
+
+    /**
+     * 判断任务是否已经结束。
+     */
+    public boolean isTerminal() {
+        return this == COMPLETED
+                || this == FAILED
+                || this == CANCELLED;
+    }
 }
