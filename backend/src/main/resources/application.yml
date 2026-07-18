@@ -51,3 +51,15 @@ info:
     name: ${app.display-name}
     version: ${app.version}
     description: Low-code data cleansing and orchestration platform
+springdoc:
+  api-docs:
+    enabled: false
+
+  swagger-ui:
+    enabled: false
+
+  packages-to-scan:
+    - com.pony.dataflow
+
+  paths-to-match:
+    - /api/**

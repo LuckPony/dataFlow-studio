@@ -29,3 +29,17 @@ management:
   endpoint:
     health:
       show-details: always
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+
+  swagger-ui:
+    enabled: true
+    path: /swagger.html
+    try-it-out-enabled: true
+    display-request-duration: true
+    operations-sorter: method
+    tags-sorter: alpha
+    filter: true
